@@ -13,8 +13,8 @@ const testimonials = [
 
 function Header({ setPage }) {
   return (
-    <header className="p-4 border-b flex justify-between">
-      <div onClick={() => setPage("home")} className="font-bold cursor-pointer">
+    <header style={{ padding: 16, borderBottom: "1px solid #ddd", display: "flex", justifyContent: "space-between" }}>
+      <div onClick={() => setPage("home")} style={{ fontWeight: "bold", cursor: "pointer" }}>
         Mia Todorovic
       </div>
       <button onClick={() => setPage("contact")}>Kontakt</button>
@@ -24,23 +24,20 @@ function Header({ setPage }) {
 
 function HomePage({ setPage }) {
   return (
-    <div className="p-6 space-y-10">
-      <h1 className="text-3xl font-bold">Gestalt psihoterapija</h1>
+    <div style={{ padding: 24 }}>
+      <h1>Gestalt psihoterapija</h1>
 
-      <div>
-        <h2 className="text-xl font-semibold">Iskustva klijenata</h2>
+      <div style={{ marginTop: 24 }}>
+        <h2>Iskustva klijenata</h2>
         {testimonials.map((t, i) => (
-          <div key={i} className="mt-4 p-4 border rounded">
+          <div key={i} style={{ marginTop: 16, padding: 16, border: "1px solid #ddd", borderRadius: 8 }}>
             <p>"{t.text}"</p>
-            <p className="text-sm mt-2">{t.name}</p>
+            <p style={{ fontSize: 14, marginTop: 8 }}>{t.name}</p>
           </div>
         ))}
       </div>
 
-      <button
-        onClick={() => setPage("contact")}
-        className="bg-black text-white px-4 py-2 rounded"
-      >
+      <button onClick={() => setPage("contact")} style={{ marginTop: 24 }}>
         Zakazi termin
       </button>
     </div>
@@ -49,8 +46,8 @@ function HomePage({ setPage }) {
 
 function ContactPage() {
   return (
-    <div className="p-6 space-y-4">
-      <h1 className="text-2xl font-bold">Kontakt</h1>
+    <div style={{ padding: 24 }}>
+      <h1>Kontakt</h1>
       <p>Telefon: +381 66 553 1509</p>
       <p>Email: mia.m.todorovic@gmail.com</p>
     </div>
